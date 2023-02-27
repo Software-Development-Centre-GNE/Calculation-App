@@ -10,10 +10,12 @@ function areaPer() {
   var area = Math.round(w * h * 1000) / 1000;
   var perimeter = Math.round((w + h) * 2 * 1000) / 1000;
 
-  var result = "Area: " + area + "   Perimeter: " + perimeter;
-
-  document.getElementById("output").innerHTML = result;
-
+  // Display results
+  document.getElementById("area").innerHTML = area.toFixed(2);
+  document.getElementById("perimeter").innerHTML = perimeter.toFixed(2);
+  document.getElementById("area-mobile").innerHTML = area.toFixed(2);
+  document.getElementById("perimeter-mobile").innerHTML = perimeter.toFixed(2);
+  
   // Clear input fields
   document.getElementById("width").value = "";
   document.getElementById("height").value = "";
