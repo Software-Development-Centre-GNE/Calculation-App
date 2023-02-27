@@ -10,76 +10,93 @@
 
     <link rel="manifest" href="manifest.json" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-   
-        <title>Calculate</title>
-        <style>
-            body {
-                background-color: #e0f7fa;
-            }
-        </style>
+
+    <title>Calculate</title>
+    <style>
+        body {
+            background-color: #e0f7fa;
+        }
+
+        .card {
+            border: none;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+            background-color: #ffffff;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .card-title {
+            color: #007bff;
+        }
+
+        .card-text {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            padding: 20px;
+            margin-bottom: 0;
+        }
+    </style>
 </head>
+
 <body>
 
     <div>
         <div class="row align-items-center" style="height: 100vh;">
-          <div class="mx-auto col-10 col-md-8 col-lg-6">
-            <!-- Form -->
-            <form class="form-example" action="" method="post">
-              <h1>Enter width and height</h1>
-      
-              <!-- Input fields -->
-              <div class="form-group">
-                <label for="width">Width</label>
-                <input
-                  type="number"
-                  class="form-control width"
-                  id="width"
-                  placeholder="Width of rectangle"
-                  name="width"
-                />
-              </div>
-              <div class="form-group" >
-                <label for="height">Height</label>
-                <input
-                  type="number"
-                  class="form-control password"
-                  id="height"
-                  placeholder="Height of rectangle"
-                  name="height"
-                />
-              </div>
-              <!-- Space between button and input field-->   
-              <button type="button" class="btn btn-primary btn-customized mt-4" onclick="areaPer()">
-                Find Area and Perimeter
-              </button>
-            </form>
-            <!-- Form end -->
-      
-             <!-- Output box -->
-      <div class="card mt-3">
-        <div class="card-body">
-          <h3 class="card-title">Results</h3>
-          <p class="card-text" id="output"></p>
-        </div>
-      </div>
-      <!-- Output box end -->
-          </div>
-        </div>
-      </div>
-      
+            <div class="mx-auto col-10 col-md-8 col-lg-6">
+                <!-- Form -->
+                <form class="form-example" action="" method="post">
+                    <h1>Enter width and height</h1>
 
-        
-      
-  
+                    <!-- Input fields -->
+                    <div class="form-group">
+                        <label for="width">Width</label>
+                        <input type="number" class="form-control width" id="width" placeholder="Width of rectangle"
+                            name="width" />
+                    </div>
+                    <div class="form-group">
+                        <label for="height">Height</label>
+                        <input type="number" class="form-control password" id="height" placeholder="Height of rectangle"
+                            name="height" />
+                    </div>
+                    <!-- Space between button and input field-->
+                    <button type="button" class="btn btn-primary btn-customized mt-4" onclick="areaPer()">
+                        Find Area and Perimeter
+                    </button>
+                </form>
+                <!-- Form end -->
+
+                <!-- Output box -->
+                <div class="card mt-3">
+                    <div class="card-body">
+                        <h3 class="card-title">Results</h3>
+                        <p class="card-text" id="output"></p>
+                    </div>
+                </div>
+                <!-- Output box end -->
+            </div>
+        </div>
+    </div>
+
+
+
+
+
     <!-- Add Bootstrap JS (requires jQuery and Popper.js) -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.1/dist/umd/popper.min.js" integrity="sha384-KrNJ/xNQkLPZjK9nQ2mCJWYhYRJieTnZs0bdlpzzwZKd/hq3SKP0TjYiRynhX9dd" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.1/dist/umd/popper.min.js"
+        integrity="sha384-KrNJ/xNQkLPZjK9nQ2mCJWYhYRJieTnZs0bdlpzzwZKd/hq3SKP0TjYiRynhX9dd"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+
     <script src="app.js"></script>
     <script>
         if ('serviceWorker' in navigator) {
-            window.addEventListener('load', function() {
+            window.addEventListener('load', function () {
                 navigator.serviceWorker.register('service_worker.js')
                     .then(registration => console.log('Service Worker registered'))
                     .catch(error => console.log('Error registering Service Worker', error));
@@ -87,4 +104,5 @@
         }
     </script>
 </body>
+
 </html>
