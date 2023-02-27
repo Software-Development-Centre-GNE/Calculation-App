@@ -6,8 +6,9 @@ function areaPer() {
     return;
   }
 
-  var area = w * h;
-  var perimeter = 2 * (w + h);
+  // Calculate area and perimeter and round to 3 decimal places
+  var area = Math.round(w * h * 1000) / 1000;
+  var perimeter = Math.round((w + h) * 2 * 1000) / 1000;
 
   var result = "Area: " + area + "   Perimeter: " + perimeter;
 
