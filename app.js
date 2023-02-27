@@ -1,7 +1,7 @@
 function areaPer() {
   var w = parseInt(document.getElementById("width").value);
   var h = parseInt(document.getElementById("height").value);
-  if (width < 0 || height < 0) {
+  if (w < 0 || h < 0) {
     alert("Height and width cannot be negative!");
     return;
   }
