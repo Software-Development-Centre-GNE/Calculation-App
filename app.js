@@ -13,4 +13,8 @@ function areaPer() {
   var result = "Area: " + area + "   Perimeter: " + perimeter;
 
   document.getElementById("output").innerHTML = result;
+
+  // Clear input fields
+  document.getElementById("width").value = "";
+  document.getElementById("height").value = "";
 }
