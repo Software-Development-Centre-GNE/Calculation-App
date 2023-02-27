@@ -1,33 +1,78 @@
 <!DOCTYPE html>
 <html lang="en"> <!--The lang attribute specifies the language of the element's content ('en' = english)-->
-    <head>
-        
-        <meta charset="UTF-8" /> <!--specifies the character encoding-->
-        
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!--instructions on how to control the page's dimensions and scaling-->
-        
-        <link rel="manifest" href="manifest.json" />
-        
+
+<head>
+
+    <meta charset="UTF-8" /> <!--specifies the character encoding-->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--instructions on how to control the page's dimensions and scaling-->
+
+    <link rel="manifest" href="manifest.json" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+   
         <title>Calculate</title>
-    </head>
-    <body>
+        <style>
+            body {
+                background-color: #e0f7fa;
+            }
+        </style>
+</head>
+<body>
+
+        <div>
+          <div class="row align-items-center" style="height: 100vh;">
+            <div class="mx-auto col-10 col-md-8 col-lg-6">
+              <!-- Form -->
+              <form class="form-example" action="" method="post">
+                <h1>Enter width and height</h1>
+                
+                <!-- Input fields -->
+                <div class="form-group">
+                  <label for="width">Width</label>
+                  <input
+                    type="number"
+                    class="form-control width"
+                    id="width"
+                    placeholder="Width of rectangle"
+                    name="width"
+                  />
+                </div>
+                <div class="form-group" >
+                  <label for="height">Height</label>
+                  <input
+                    type="number"
+                    class="form-control password"
+                    id="height"
+                    placeholder="Height of rectangle"
+                    name="height"
+                  />
+                </div>
+                <!-- Space between button and input field-->   
+                <button type="button" class="btn btn-primary btn-customized mt-4" onclick="areaPer()">
+                    Find Area and Perimeter
+                </button>
+              </form>
+              <!-- Form end -->
+               <p id="output" class="mt-3"></p>
+            </div>
+          </div>
+        </div>
+  
+    <!-- Add Bootstrap JS (requires jQuery and Popper.js) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.1/dist/umd/popper.min.js" integrity="sha384-KrNJ/xNQkLPZjK9nQ2mCJWYhYRJieTnZs0bdlpzzwZKd/hq3SKP0TjYiRynhX9dd" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     
-    <h1>Enter width and height</h1>
-<h2>Width: <input type ="number" id ="width"></h2>
-<h2>Height: <input type ="number" id ="height"></h2>
-<button onclick="areaPer()">Find Area and Perimeter</button>
-
-<p id="output"></p>
-        
-        <script src="app.js"></script>
-        
+    <script src="app.js"></script>
     <script>
-    if (!navigator.serviceWorker.controller) {
-        navigator.serviceWorker.register("service_worker.js").then(function(reg) {
-             console.log("Service worker has been registered for scope: " + reg.scope);
-         });
-    }
-    </script> <!--accessing service_worker.js file-->
-
-    </body>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('service_worker.js')
+                    .then(registration => console.log('Service Worker registered'))
+                    .catch(error => console.log('Error registering Service Worker', error));
+            });
+        }
+    </script>
+</body>
 </html>
