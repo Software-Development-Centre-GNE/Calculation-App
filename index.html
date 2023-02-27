@@ -70,18 +70,19 @@
                 <div class="card mt-3">
                     <div class="card-body">
                       <h3 class="card-title">Results</h3>
-                      <p class="card-text" id="output">
-                        <span class="d-none d-sm-inline">Area: </span>
-                        <span id="area"></span>
-                        <span class="d-none d-sm-inline">Perimeter:  </span>
-                        <span id="perimeter"></span>
-                        <span class="d-inline d-sm-none">Area: <br></span>
-                        <span class="d-inline d-sm-none" id="area-mobile"></span>
-                        <span class="d-inline d-sm-none"><br>Perimeter: </span>
-                        <span class="d-inline d-sm-none" id="perimeter-mobile"></span>
+                      <!-- Desktop version -->
+                      <p class="card-text d-none d-sm-block" id="output">
+                        Area: <span id="area"></span>
+                        Perimeter: <span id="perimeter"></span>
+                      </p>
+                      <!-- Mobile version -->
+                      <p class="card-text d-block d-sm-none" id="output-mobile">
+                        Area: <span id="area-mobile"></span><br>
+                        Perimeter: <span id="perimeter-mobile"></span>
                       </p>
                     </div>
                   </div>
+                  
                 <!-- Output box end -->
             </div>
         </div>
