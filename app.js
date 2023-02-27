@@ -3,7 +3,7 @@ function areaPer(){
   var h = document.getElementById("height").value;
   
   var area = w * h;
-  var perimeter = w + w + h + h;
+  var perimeter = w *2 + h*2;
   
   var result = "Area: " + area + " Perimeter: " + perimeter;
   
