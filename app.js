@@ -30,3 +30,4 @@ var sum = Math.round(num1 + num2 * 1000) / 1000;
 
 // display the sum
   document.getElementById("Sum").innerHTML = area.toFixed(4);
+  }
