@@ -4,7 +4,7 @@
 folder_name=$1
 file_name="main.html"
 line_to_change="app.js"
-new_line="$folder_name\/$folder_name.js"
+new_line="$folder_name.js"
 
 # Create folder
 mkdir $folder_name
@@ -51,3 +51,16 @@ function yourFunctionName() {
 
 }" > $folder_name/$folder_name.js
 echo "New JS file created in folder: $folder_name/$folder_name.js"
+
+echo "Adding button to main page"
+
+buttonAdditionPlace="<!-- AddaNewButtonHERE -->"
+buttonCode="<div class=\"row\">\
+            <div class=\"col-sm-6 mt-3\">\
+                <a href=\"$folder_name\/index.html\" class=\"btn btn-primary btn-lg btn-block\">$folder_name<\/a>\
+            <\/div>\
+        <\/div>\
+             "
+
+sed -i "s/$buttonAdditionPlace/$buttonCode\n$buttonAdditionPlace/g" "index.html"
+echo "Button added to index page"
