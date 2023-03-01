@@ -20,3 +20,13 @@ function areaPer() {
   document.getElementById("width").value = "";
   document.getElementById("height").value = "";
 }
+
+function sum() {
+var num1 = parseFloat(document.getElementById("num1").value);
+var num2 = parseFloat(document.getElementById("num2").value);
+
+// add two numbers
+var sum = Math.round(num1 + num2 * 1000) / 1000;
+
+// display the sum
+  document.getElementById("Sum").innerHTML = area.toFixed(4);
