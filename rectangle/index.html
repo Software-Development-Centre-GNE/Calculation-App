@@ -2,37 +2,80 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Problem Solver</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Problem Solver</title>
 
-    <link rel="manifest" href="manifest.json" />
+  <link rel="manifest" href="manifest.json" />
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <style>
-        html,
-        body {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-        }
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
-        object {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-    </style>
+  <link rel="stylesheet" href="/style.css">
 </head>
 
 <body>
+  <script id="my-template" type="text/template">
+        <div>
+            <div class="row align-items-center" style="height: 100vh;">
+              <div class="mx-auto col-10 col-md-8 col-lg-6">
+                <!-- Form -->
+                <form class="form-example" action="" method="post">
+                  <h1>{{ heading }}</h1>
+                  {{#each inputs}}
+                  <!-- Input fields -->
+                  <div class="form-group">
+                    <label for="{{ this.name }}">{{ this.label }}</label>
+                    <input type="{{ this.type }}" class="form-control {{ this.name }}" id="{{ this.name }}" placeholder="{{ this.placeholder }}" name="{{ this.name }}" />
+                  </div>
+                  {{/each}}
+                  <!-- Space between button and input field-->
+                  <button type="button" class="btn btn-primary btn-customized mt-4" onclick="{{ calculateFunc }}">
+                    {{ buttonName }}
+                  </button>
+                </form>
+                <!-- Form end -->
+          
+                <!-- Output box -->
+                <div class="card mt-3">
+                  <div class="card-body">
+                    <h3 class="card-title">{{ resultHeading }}</h3>
+                    <!-- Desktop version -->
+                    <p class="card-text d-sm-block" id="output">
+                      {{#each results}}
+                      {{ this.label }}: <span id="{{ this.name }}"></span>
+                      {{/each}}
+                    </p>
+           </div>
+      </div>
+    </div>
+</div>
+</div>
+    </script>
 
-    <object data="/main.html"></object>
+  <div id="my-content"></div>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+  <!-- Add Bootstrap JS (requires jQuery and Popper.js) -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.1/dist/umd/popper.min.js"
+    integrity="sha384-KrNJ/xNQkLPZjK9nQ2mCJWYhYRJieTnZs0bdlpzzwZKd/hq3SKP0TjYiRynhX9dd"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('service_worker.js')
+          .then(registration => console.log('Service Worker registered'))
+          .catch(error => console.log('Error registering Service Worker', error));
+      });
+    }
+  </script>
+  <script src="rectangle.js"></script>
 </body>
 
 </html>
