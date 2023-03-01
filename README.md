@@ -1,5 +1,13 @@
 # To create a new problem
 
+## clone the repository
+
+```bash
+git clone https://github.com/geekabhinav007/Calculation-App.git
+
+cd Calculation-App
+```
+
 ## Run the following command
 
 Give nesesary permissions to the script:
