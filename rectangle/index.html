@@ -21,13 +21,31 @@
                 <!-- Form -->
                 <form class="form-example" action="" method="post">
                   <h1>{{ heading }}</h1>
-                  {{#each inputs}}
-                  <!-- Input fields -->
-                  <div class="form-group">
-                    <label for="{{ this.name }}">{{ this.label }}</label>
-                    <input type="{{ this.type }}" class="form-control {{ this.name }}" id="{{ this.name }}" placeholder="{{ this.placeholder }}" name="{{ this.name }}" />
-                  </div>
-                  {{/each}}
+                                    <!-- Dropdown -->
+                                    {{#if enableDropdown}}
+                                    {{#each dropdownValues}}                  
+                                    <div class="form-group">
+                                      <label for="{{ this.dropdownName }}">{{ this.dropdownLabel }}</label>
+                                      <select class="form-control {{ this.dropdownName }}" id="{{ this.dropdownName }}" name="{{ this.dropdownName }}">
+                                        <option value="" selected disabled hidden>{{ this.dropdownPlaceholder }}</option>
+                                        {{#each this.dropdownOptions}}
+                                        <option value="{{ this }}">{{ this }}</option>
+                                        {{/each}}
+                                      </select>
+                  
+                                    </div>
+                                    {{/each}}
+                  
+                                    {{else}}
+                                    {{#each inputs}}
+                                    <!-- Input fields -->
+                                    <div class="form-group">
+                                      <label for="{{ this.name }}">{{ this.label }}</label>
+                                      <input type="{{ this.type }}" class="form-control {{ this.name }}" id="{{ this.name }}" placeholder="{{ this.placeholder }}" name="{{ this.name }}" />
+                                    </div>
+                                    {{/each}}
+                                    {{/if}}
+                                    
                   <!-- Space between button and input field-->
                   <button type="button" class="btn btn-primary btn-customized mt-4" onclick="{{ calculateFunc }}">
                     {{ buttonName }}
