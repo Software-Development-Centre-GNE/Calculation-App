@@ -10,34 +10,11 @@
 
     <link rel="manifest" href="manifest.json" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
 
     <title>Calculate</title>
-    <style>
-        body {
-            background-color: #e0f7fa;
-        }
-
-        .card {
-            border: none;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
-            background-color: #ffffff;
-            border-radius: 8px;
-            margin-top: 20px;
-        }
-
-        .card-title {
-            color: #007bff;
-        }
-
-        .card-text {
-            font-size: 24px;
-            font-weight: bold;
-            text-align: center;
-            padding: 20px;
-            margin-bottom: 0;
-        }
-    </style>
-</head>
+	</head>
 
 <body>
 
@@ -69,15 +46,15 @@
                 <!-- Output box -->
                 <div class="card mt-3">
                     <div class="card-body">
-                      <h3 class="card-title">Results</h3>
+			    <h5 class="card-title">Results</h5>
                       <!-- Desktop version -->
                       <p class="card-text d-none d-sm-block" id="output">
-                        Area: <span id="area"></span>
+		      Area: <span id="area"></span><br>
                         Perimeter: <span id="perimeter"></span>
                       </p>
                       <!-- Mobile version -->
                       <p class="card-text d-block d-sm-none" id="output-mobile">
-                        Area: <span id="area-mobile"></span><br>
+		      Area: <span id="area-mobile"></span><br><br>
                         Perimeter: <span id="perimeter-mobile"></span>
                       </p>
                     </div>
