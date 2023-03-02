@@ -9,8 +9,8 @@ const data = {
   ],
 	// Input 
   inputs: [
-  {label: "num1", type: "number", name: "num1", placeholder: "Enter Number"},
-  {label: "num2", type: "number", name: "num2", placeholder: "Enter Number"},
+  {label: "Number 1", type: "number", name: "num1", placeholder: "Enter Number"},
+  {label: "Number 2", type: "number", name: "num2", placeholder: "Enter Number"},
    ],
   calculateFunc: "yourFunctionName()",
   buttonName: "Calculate",
