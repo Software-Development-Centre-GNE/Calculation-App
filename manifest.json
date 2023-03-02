@@ -1,6 +1,6 @@
 {
-  "name": "Calculation-App",
-  "short_name": "Calculate",
+  "name": "Problem_Solver",
+  "short_name": "Problem Solver",
   "start_url": "index.html",
   "scope": "./",
   "icons": [
